@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "npx prisma generate && next build",
     "start": "npx prisma migrate deploy && next start",
     "lint": "next lint",
     "postinstall": "prisma generate"
-  },
+  }, 
   "dependencies": {
     "@prisma/client": "^6.5.0",
     "@radix-ui/react-label": "^2.1.2",
