@@ -13,42 +13,42 @@ export default function HomePage() {
         <HomeArticlesByType type="career" />
         <HomeArticlesByType type="event" />
 
-        <div className="mb-2">
-      </div>
-      <hr className="border-t-2 border-black w-full mb-2" />
-      <hr className="border-t-2 border-black w-full mb-2" />
+        <div className="mb-2"></div>
+        <hr className="border-t-2 border-black w-full mb-2" />
+        <hr className="border-t-2 border-black w-full mb-2" />
 
         <h1 className="text-3xl text-black font-magioline capitalize">
-          Unwind <span className="text-xl font-magioline">with Wordle & Gallery</span>
+          Unwind{" "}
+          <span className="text-xl font-magioline">with Wordle & Gallery</span>
         </h1>
-        <div className="flex justify-center items-center gap-10">
+        <div className="flex flex-col md:flex-row gap-10 justify-center w-fit mx-auto">
           <PhotoGallery />
-
-          <Link
-            href="/wordle"
-            className="group transition-transform hover:scale-105"
-          >
-            <div className="p-4 rounded-lg shadow-md">
-              <div className="relative w-[300px] h-[200px] mb-3 overflow-hidden rounded-md">
-                <Image
-                  src="/img/CCAssets/Wordle.png"
-                  alt="Wordle Game"
-                  fill
-                  className="object-cover"
-                />
+          <div>
+            <Link
+              href="/wordle"
+              className="group transition-transform hover:scale-105"
+            >
+              <div className="p-4 rounded-lg shadow-md">
+                <div className="relative w-[300px] h-[200px] mb-3 overflow-hidden rounded-md">
+                  <Image
+                    src="/img/CCAssets/Wordle.png"
+                    alt="Wordle Game"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-center group-hover:underline">
+                  Play Wordle
+                </h3>
+                <p className="text-gray-600 text-sm text-center mt-1">
+                  Test your vocabulary with our daily word puzzle
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-center group-hover:underline">
-                Play Wordle
-              </h3>
-              <p className="text-gray-600 text-sm text-center mt-1">
-                Test your vocabulary with our daily word puzzle
-              </p>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </div>
-      <hr className="border-t-2 border-black w-full mb-2" />
-      <hr className="border-t-2 border-black w-full mb-2" />
-
+        <hr className="border-t-2 border-black w-full mb-2" />
+        <hr className="border-t-2 border-black w-full mb-2" />
       </div>
     </div>
   );

@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignore all files in the node_modules directory
+**/__pycache__/
+/generated/
+/prisma/generated/
+**/*.pyc
+!**/__init__.py
+*.log
+*.tmp
+*.swp
