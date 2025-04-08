@@ -42,7 +42,6 @@ next-env.d.ts
 
 # Ignore all files in the node_modules directory
 **/__pycache__/
-/prisma/generated/
 **/*.pyc
 !**/__init__.py
 *.log
