@@ -1,20 +1,16 @@
 # Stage 1: Dependencies
-FROM node:20-alpine AS deps
+FROM node:23-alpine AS deps
 WORKDIR /app
 
-# Define build-time arguments
-ARG POSTGRES_PRISMA_URL
-ARG POSTGRES_URL_NON_POOLING
-
 # Install dependencies needed for Prisma and build
-RUN apk add --no-cache libc6-compat
+RUN apk add --no-cache libc6-compat 
 
 # Copy package.json and install dependencies
 COPY package.json package-lock.json ./
 RUN npm install
 
 # Stage 2: Builder
-FROM node:20-alpine AS builder
+FROM node:23-alpine AS builder
 WORKDIR /app
 
 # Copy dependencies from deps stage
@@ -35,13 +31,11 @@ RUN npx prisma generate
 RUN npm run build
 
 # Stage 3: Runner
-FROM node:20-alpine AS runner
+FROM node:23-alpine AS runner
 WORKDIR /app
 
 # Set environment to production
 ENV NODE_ENV=production
-ENV POSTGRES_PRISMA_URL=${POSTGRES_PRISMA_URL}
-ENV POSTGRES_URL_NON_POOLING=${POSTGRES_URL_NON_POOLING}
 
 # Create a non-root user to run the app
 RUN addgroup --system --gid 1001 nodejs
